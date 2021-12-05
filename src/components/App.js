@@ -41,9 +41,16 @@ const WeatherSearch = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${postalCode},US&units=imperial&appid=bd0afabcee9b2cb0e014f153e195e81c`);
-    props.onSubmit(resp.data);
-    setPostalCode("");
+    await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${postalCode},US&units=imperial&appid=bd0afabcee9b2cb0e014f153e195e81c`)
+      .then(({ data }) => {
+        props.onSubmit(data);
+        setPostalCode("");
+      })
+      .catch(error => {
+        const message = `The postal code ${postalCode} could not be found. Please try again.`;
+        console.log(error);
+        props.onSubmit({}, message);
+      });
   }
 
   return (
