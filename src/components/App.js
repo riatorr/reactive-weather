@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/App.css';
-import WeatherCard from 'WeatherCard';
-import WeatherSearch from 'WeatherSearch';
+import WeatherCard from './WeatherCard';
+import WeatherSearch from './WeatherSearch';
 
 class App extends React.Component {
   constructor(props) {
