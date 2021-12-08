@@ -7,6 +7,8 @@ const WeatherSearch = (props) => {
   const [postalCode, setPostalCode] = useState("");
 
   const handleSubmit = async (event) => {
+    let message;
+
     event.preventDefault();
     await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${postalCode},US&units=imperial&appid=bd0afabcee9b2cb0e014f153e195e81c`)
       .then(({ data }) => {
@@ -14,8 +16,7 @@ const WeatherSearch = (props) => {
         setPostalCode("");
       })
       .catch(error => {
-        const message = `The postal code ${postalCode} could not be found. Please try again.`;
-        console.log(error);
+        message = `The postal code ${postalCode} could not be found. Please try again.`;
         props.onSubmit({}, message);
       });
   }
