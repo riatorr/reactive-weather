@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       currentWeather: {}
     };
-  };
+  }
 
   showCurrentWeather = (currentWeatherData) => {
     console.log(this);
@@ -24,11 +24,11 @@ class App extends React.Component {
       weatherCard = <WeatherCard currentWeather={this.state.currentWeather} />;
     } else {
       weatherCard = <div className="center">Search for weather conditions in any US city by typing the 5-digit postal code in the search bar above!</div>
-    };
+    }
 
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="app-header">
           <h1>
             Reactive Weather
           </h1>
@@ -37,7 +37,7 @@ class App extends React.Component {
         {weatherCard}
       </div>
     );
-  };
-};
+  }
+}
 
 export default App;
