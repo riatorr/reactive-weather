@@ -143,18 +143,18 @@ const extremeHotCommentaryList = [
       if (between(temperature, item[0], item[1])) {
         commentList = item[2];
         comment = commentList[Math.floor(Math.random() * commentList.length)];
-      };
+      }
     });
   
     return comment;
-  };
+  }
   
   const getAlternateWeatherDescription = (temperature) => {
     const temp = Math.round(temperature);
   
     if (temp === 69) {
       return "Nice.";
-    };
+    }
   
     if (greaterThan(temp, 110)) {
       return getExtremeHotWeatherCommentary();
@@ -162,7 +162,7 @@ const extremeHotCommentaryList = [
       return getExtremeColdWeatherCommentary();
     } else {
       return getStandardWeatherCommentary(temp);
-    };
+    }
   };
 
   export default getAlternateWeatherDescription;
