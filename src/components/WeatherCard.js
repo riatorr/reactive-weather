@@ -7,7 +7,6 @@ import { capitalizeFirstLetter, roundNumberToWhole } from '../transform-data';
 // This component displays the weather
 const WeatherCard = (props) => {
   const currentWeather = props.currentWeather;
-  console.log('WeatherCard props: ', currentWeather);
   return (
     <main>
       <div className="weather-card col-12">
