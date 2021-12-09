@@ -13,7 +13,6 @@ class App extends React.Component {
   };
 
   showCurrentWeather = (currentWeatherData, currentMessage = "") => {
-    console.log(this);
     this.setState({
       currentWeather: {...currentWeatherData},
       message: currentMessage
