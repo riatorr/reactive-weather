@@ -10,7 +10,7 @@ const WeatherSearch = (props) => {
     let message;
 
     event.preventDefault();
-    await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${postalCode},US&units=imperial&appid=bd0afabcee9b2cb0e014f153e195e81c`)
+    await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${postalCode},US&units=imperial&appid=${process.env.REACT_APP_OPENWEATHER_CLIENT_SECRET}`)
       .then(({ data }) => {
         props.onSubmit(data);
         setPostalCode("");
