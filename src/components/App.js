@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentWeather: {},
+      currentWeather: null,
       message: "Search for weather conditions in any US city by typing the 5-digit postal code in the search bar above!"
     };
   };
@@ -19,9 +19,10 @@ class App extends React.Component {
     });
   };
 
-  render() {
+  render() {  
     let weatherCard;
-    if (Object.keys(this.state.currentWeather).length > 0) {
+    
+    if (this.state.currentWeather !== null) {
       weatherCard = <WeatherCard currentWeather={this.state.currentWeather} />;
     } else {
       weatherCard = <div className="center">{this.state.message}</div>

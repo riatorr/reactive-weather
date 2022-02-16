@@ -22,10 +22,10 @@ const WeatherSearch = (props) => {
   }
 
   return (
-    <div className="weather-search">
+    <div className="weather-search container">
       <form className="row justify-content-center" onSubmit={handleSubmit}>
-        <input id="postalCode" className="col-6" type="text" maxLength="5" value={postalCode} onChange={event => setPostalCode(event.target.value)} placeholder="Search by US 5-digit postal code" required/>
-        <button className="col-1">Search</button>
+        <input id="postalCode" className="col-12 col-sm-6" type="text" maxLength="5" value={postalCode} onChange={event => setPostalCode(event.target.value)} placeholder="Search by US 5-digit postal code" required/>
+        <button className="mt-1 mt-sm-0 col-3 col-sm-2 col-xl-1">Search</button>
       </form>
     </div>
   );
