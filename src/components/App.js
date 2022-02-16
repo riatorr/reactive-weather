@@ -13,10 +13,17 @@ class App extends React.Component {
   };
 
   showCurrentWeather = (currentWeatherData, currentMessage = "") => {
+    if (currentWeatherData === null) {
+      this.setState({
+        currentWeather: currentWeatherData,
+        message: currentMessage
+      });
+    } else {
     this.setState({
       currentWeather: {...currentWeatherData},
-      message: currentMessage
+      message: currentWeatherData
     });
+    }
   };
 
   render() {  
@@ -35,7 +42,7 @@ class App extends React.Component {
             Reactive Weather
           </h1>
         </header>
-        <WeatherSearch onSubmit={this.showCurrentWeather}/>
+        <WeatherSearch currentWeather={this.state.currentWeather} onSubmit={this.showCurrentWeather}/>
         {weatherCard}
       </div>
     );
