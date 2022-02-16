@@ -17,7 +17,7 @@ const WeatherSearch = (props) => {
       })
       .catch(error => {
         message = `The postal code ${postalCode} could not be found. Please try again.`;
-        props.onSubmit({}, message);
+        props.onSubmit(null, message);
       });
   }
 
